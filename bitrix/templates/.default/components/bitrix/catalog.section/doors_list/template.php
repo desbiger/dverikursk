@@ -190,7 +190,7 @@ function GetDop($array)
 <? endforeach ?>
 
 <div class = "clear"></div>
-<div class = "sort">
+<div class = "sort" style="margin-top: -40px!important;">
 	<?= $arResult['NAV_STRING'] ?>
 </div>
 <? if ($arResult['SECTION']): ?>
