@@ -2,10 +2,10 @@
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns = "http://www.w3.org/1999/xhtml">
 <head>
-<title><?$APPLICATION->ShowTitle()?></title>
+	<title><?$APPLICATION->ShowTitle()?></title>
 	<?$APPLICATION->ShowHead()?>
 	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8"/>
-	
+
 
 	<link href = "/bitrix/templates/index/css/style.css" type = "text/css" rel = "stylesheet"/>
 	<link rel = "stylesheet" type = "text/css" href = "/bitrix/templates/index/fancybox/jquery.fancybox-1.3.4.css" media = "screen"/>
@@ -26,17 +26,16 @@
 		$(document).ready(function () {
 
 
-$('#download').bind('click', function (e) {
-                e.preventDefault();
-                $('#element_to_pop_up2').bPopup({
-                    easing: 'easeOutBack',
-                    speed: 600,
-                    opacity: 0.7,
-                    modalColor: 'white',
-                    transition: 'slideDown'
-                });
-            });
-
+			$('#download').bind('click', function (e) {
+				e.preventDefault();
+				$('#element_to_pop_up2').bPopup({
+					easing: 'easeOutBack',
+					speed: 600,
+					opacity: 0.7,
+					modalColor: 'white',
+					transition: 'slideDown'
+				});
+			});
 
 
 			$("a.fancy").fancybox({
@@ -137,33 +136,24 @@ $('#download').bind('click', function (e) {
 			<img src = "/bitrix/templates/index/image/logo.png" alt = ""/>
 		</a>
 	</h5>
-<div style="position: absolute; left: 10px; bottom: 0px">
-	<?$APPLICATION->IncludeComponent(
-		"bitrix:main.include",
-		"",
-		Array(
+
+	<div style = "position: absolute; left: 10px; bottom: 0px">
+		<?$APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
 			"AREA_FILE_SHOW" => "file",
 			"PATH" => "top",
 			"EDIT_TEMPLATE" => ""
-		)
-	);?>
-</div>
+		));?>
+	</div>
 	<div class = "mess_phone">
 
 		<?$APPLICATION->IncludeComponent("myComponents:size.me", ".default", array(
-	"EMAIL" => "stroyka@optidoor.ru"
-	),
-	false
-);?><?$APPLICATION->IncludeComponent("myComponents:call.me", ".default", array(
-	"EMAIL" => "stroyka@optidoor.ru"
-	),
-	false
-);?>
+			"EMAIL" => "stroyka@optidoor.ru"
+		), false);?><?$APPLICATION->IncludeComponent("myComponents:call.me", ".default", array(
+			"EMAIL" => "stroyka@optidoor.ru"
+		), false);?>
 		<?$APPLICATION->IncludeComponent("myComponents:basket.small", ".default", array(
-	"EMAIL" => "stroyka@optidoor.ru"
-	),
-	false
-);?>
+			"EMAIL" => "stroyka@optidoor.ru"
+		), false);?>
 
 	</div>
 
@@ -202,8 +192,8 @@ $('#download').bind('click', function (e) {
 <div id = "content_top">
 	<div class = "range">
 		<div class = "content_top_center">
-
-			<?$APPLICATION->IncludeComponent("bitrix:catalog.section", "slider_on_base", array(
+			<?if ($_SERVER['PHP_SELF'] == '/index.php'): ?>
+				<?$APPLICATION->IncludeComponent("bitrix:catalog.section", "slider_on_base", array(
 					"IBLOCK_TYPE" => "other",
 					"IBLOCK_ID" => "15",
 					"SECTION_ID" => "",
@@ -266,7 +256,7 @@ $('#download').bind('click', function (e) {
 					"PAGER_SHOW_ALL" => "Y",
 					"AJAX_OPTION_ADDITIONAL" => ""
 				), false);?>
-
+			<? endif?>
 			<? if ($_SERVER['PHP_SELF'] == "/index.php"): ?>
 				<?$APPLICATION->IncludeComponent("bitrix:catalog.section", "razdels_on_base", array(
 					"IBLOCK_TYPE" => "products",
