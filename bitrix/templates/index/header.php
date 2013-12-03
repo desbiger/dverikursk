@@ -137,7 +137,17 @@ $('#download').bind('click', function (e) {
 			<img src = "/bitrix/templates/index/image/logo.png" alt = ""/>
 		</a>
 	</h5>
-
+<div style="position: absolute; left: 10px; bottom: 0px">
+	<?$APPLICATION->IncludeComponent(
+		"bitrix:main.include",
+		"",
+		Array(
+			"AREA_FILE_SHOW" => "file",
+			"PATH" => "top",
+			"EDIT_TEMPLATE" => ""
+		)
+	);?>
+</div>
 	<div class = "mess_phone">
 
 		<?$APPLICATION->IncludeComponent("myComponents:size.me", ".default", array(

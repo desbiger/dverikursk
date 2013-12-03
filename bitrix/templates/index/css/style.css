@@ -31,10 +31,12 @@ body {
     font-size: 14px;
     margin-top: 20px;
     color: #333333;
+    position: relative;
 }
 
 #header h5 {
     float: left;
+    padding-bottom: 27px;
 }
 
 #header .contact {
@@ -607,7 +609,7 @@ img {
     top: -40px;
     position: relative;
     width: 900px;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .gallery {
@@ -1466,7 +1468,6 @@ ul.filter_in li:hover {
     float: left;
     width: 450px;
     height: 500px;
-    padding-left: 10px;
     background-color: #999999;
     margin-left: 10px;
 }

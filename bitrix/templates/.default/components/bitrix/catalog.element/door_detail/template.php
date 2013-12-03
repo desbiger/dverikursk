@@ -25,6 +25,23 @@ $section = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID'])
 )) ?>
 <script type = "text/javascript">
 	$(function () {
+		var tovar_id = '<?=$arResult['ID']?>';
+		var session = '<?=$_SESSION['fixed_session_id']?>';
+		$('#add_to_basket').click(function () {
+			$.post(
+					'/ajax/basket_add.php',
+					{
+						'PRODUCT_ID': tovar_id
+					},
+					function(date){
+						$('#basket_count').html(date);
+						alert('Товар добавлен в корзину');
+					}
+
+			);
+		});
+
+
 		$('.small_picture a').click(function () {
 			$('.big_picture img').fadeOut(200);
 			$('.big_picture img').attr('src', $(this).attr('rel'));
@@ -34,6 +51,7 @@ $section = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID'])
 		});
 	});
 </script>
+
 <div class = "sidebar_L">
 	<div class = "left_cont">
 		<div class = "big_picture">
@@ -67,6 +85,7 @@ $section = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID'])
 				<? endforeach ?>
 			</div>
 		<? endif?>
+
 	</div>
 
 
@@ -114,7 +133,13 @@ $section = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID'])
 					<?endif ?>
 				<? endif ?>
 			<? endforeach?>
-
+			<tr>
+				<td colspan = "2" style = "text-align: right">
+					<input id = 'add_to_basket' type = "button" value = "В корзину" style = "width: 100px; height:
+				40px; font-size:
+				18px;
+			background-color: #0D77BD; color: white; cursor:pointer; border: none; "></td>
+			</tr>
 			</tbody>
 		</table>
 
@@ -139,16 +164,16 @@ $section = CIBlockSection::GetByID($arResult['IBLOCK_SECTION_ID'])
 		<p><?=$arResult['DETAIL_TEXT']?></p>
 
 
-<!--		<p><b>Основные технические характеристики:</b></p>-->
-<!---->
-<!--		<ul class = "setting">-->
-<!--			--><?//foreach ($arResult['PROPERTIES'] as $key => $vol): ?>
-<!--				--><?// if ($vol['VALUE'] && !in_array($key, $not_included_properties)): ?>
-<!--					<li>— --><?//=$vol['NAME']?><!-- --><?//=$vol['VALUE']?><!--</li>-->
-<!--				--><?// endif ?>
-<!--			--><?// endforeach?>
-<!---->
-<!--		</ul>-->
+		<!--		<p><b>Основные технические характеристики:</b></p>-->
+		<!---->
+		<!--		<ul class = "setting">-->
+		<!--			--><?//foreach ($arResult['PROPERTIES'] as $key => $vol): ?>
+		<!--				--><?// if ($vol['VALUE'] && !in_array($key, $not_included_properties)): ?>
+		<!--					<li>— --><?//=$vol['NAME']?><!-- --><?//=$vol['VALUE']?><!--</li>-->
+		<!--				--><?// endif ?>
+		<!--			--><?// endforeach?>
+		<!---->
+		<!--		</ul>-->
 
 	</div>
 </div>
