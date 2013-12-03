@@ -19,6 +19,7 @@
 	<script type = "text/javascript" src = "/bitrix/templates/index/js/jquery.jcarousel.js"></script>
 	<script type = "text/javascript" src = "/bitrix/templates/index/js/mootools-core-1.js"></script>
 	<script type = "text/javascript" src = "/bitrix/templates/index/js/doors.js"></script>
+	<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 
 	<script type = "text/javascript" src = "/bitrix/templates/index/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
 	<script type = "text/javascript" src = "/bitrix/templates/index/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
@@ -138,11 +139,13 @@
 	</h5>
 
 	<div style = "position: absolute; left: 10px; bottom: 0px">
-		<?$APPLICATION->IncludeComponent("bitrix:main.include", "", Array(
-			"AREA_FILE_SHOW" => "file",
-			"PATH" => "top",
-			"EDIT_TEMPLATE" => ""
-		));?>
+		<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+	"AREA_FILE_SHOW" => "file",
+	"PATH" => "/top",
+	"EDIT_TEMPLATE" => "standard.php"
+	),
+	false
+);?>
 	</div>
 	<div class = "mess_phone">
 

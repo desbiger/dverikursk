@@ -82,6 +82,13 @@
 				<a href = "/">
 					<img src = "/bitrix/templates/index/image/logo_footer.png" alt = ""/>
 				</a>
+				<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default", array(
+	"AREA_FILE_SHOW" => "file",
+	"PATH" => "/bottom",
+	"EDIT_TEMPLATE" => ""
+	),
+	false
+);?>
 			</div>
 
 			<div class = "phone">
@@ -176,6 +183,7 @@
         <div class="style_popap">
             <div class="b-close">
 				<img src="/bitrix/templates/index/image/close.png" alt="">
+
             </div>
 
             <div style="width: 400px; line-height: 22px; color: #686868; font-size: 14px">Для получения более подробной информации по
