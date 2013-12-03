@@ -1849,3 +1849,18 @@ div.line-h20 p{
 
 
 
+.menu_bottom{
+    display: block;
+    margin: auto;
+    overflow: hidden;
+    width: 411px;
+}
+.menu_bottom li{
+    margin-right: 10px;
+    display: block;
+    float:left;
+}
+.menu_bottom li a{
+    color: #0D77BD;
+}
+
