@@ -1864,3 +1864,113 @@ div.line-h20 p{
     color: #0D77BD;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper {
+    width: 750px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.caroufredsel_wrapper{
+    margin: auto 0 !important;
+    left: 18px !important;
+    width: 721px !important;
+}
+
+#carousel {
+    width: 760px;
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 0 30px 0;
+    height: 340px;
+    border: 2px solid #E3E3E3;
+    border-radius: 10px;
+}
+
+#carousel h3{
+    margin-left: 20px;
+}
+
+#carousel ul {
+    list-style: none;
+    display: block;
+    margin-left: 18px !important;
+    margin-right: 5px !important;
+}
+
+#carousel li {
+    text-align: center;
+    width: 145px;
+    height: 310px;
+    padding: 0;
+    margin-right: 35px;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+#carousel li a {
+    display: block;
+    margin-bottom: 10px;
+    color: #0D77BD;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+
+#carousel ul li .price{
+    color: #009D40;
+    font-size: 16px;
+}
+
+
+#next{
+    position: absolute;
+    background-image: url("../image/left_slider_no.png");
+    width: 26px;
+    height: 26px;
+    top: 40%;
+    z-index: 50;
+    left: 20px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+#prev{
+    position: absolute;
+    background-image: url("../image/right_slider_no.png");
+    width: 26px;
+    height: 26px;
+    top: 40%;
+    z-index: 50;
+    right: 20px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+
+.wp_border{
+    border: 1px solid #C5DDA5;
+    margin: 0 -18px;
+    padding: 5px 18px;
+    height: 60px;
+}
